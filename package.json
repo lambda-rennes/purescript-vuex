@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "parcel": "^1.9.7",
+    "vue": "^2.5.17",
+    "vue-hot-reload-api": "^2.3.0",
+    "vuex": "^3.0.1"
+  },
+  "scripts": {
+    "dev": "parcel serve web/index.html"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.2.0",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
