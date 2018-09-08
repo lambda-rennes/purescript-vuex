@@ -6,7 +6,10 @@
     "vuex": "^3.0.1"
   },
   "scripts": {
-    "dev": "parcel serve web/index.html"
+    "buildjs": "parcel build web/index.js",
+    "buildps": "parcel build web/index.js",
+    "watch": "pulp --psc-package -w build",
+    "serve": "parcel serve web/index.html"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
