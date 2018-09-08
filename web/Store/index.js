@@ -3,13 +3,13 @@
 import VueX from "vuex";
 
 const mkStore = Counter => new VueX.Store({
-	  state: {
+    state: {
 		    count: 1
 	  },
 	  getters: {
 		    stringify: state => ('Stringified state: ' + state.count)
 	  },
-	  mutations: {
+    mutations: {
 		    increment: state => {
             state.count = Counter.inc(state.count);
         },
@@ -17,7 +17,7 @@ const mkStore = Counter => new VueX.Store({
             state.count = Counter.dec(state.count);
         }
 	  },
-	  actions: {
+    actions: {
 		    increment: ctx => ctx.commit("increment"),
 		    decrement: ctx => ctx.commit("decrement")
 	  }

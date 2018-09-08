@@ -1,9 +1,8 @@
-import App from "./App.vue";
 import Vue from "vue";
 import VueX from "vuex";
 import Store from "./Store";
+import App from "./App.vue";
 import Counter from "../output/Counter";
-
 
 function setupUI() {
     Vue.use(VueX);
