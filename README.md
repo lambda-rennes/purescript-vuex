@@ -19,9 +19,20 @@ To build this project, you will need:
 - purescript 0.12
 - yarn
 
-The simplest way to provision these dependencies is to install Nix (`curl
-https://nixos.org/nix/install | sh`) and start a Nix shell:
+The simplest way to provision these dependencies is to use Nix. You may install
+Nix by running:
 
+```
+curl https://nixos.org/nix/install | sh`
+```
+
+Start by cloning this repository and `cd` into it:
+```
+$ git clone https://github.com/lambda-rennes/purescript-vuex.git
+$ cd purescript-vuex
+```
+
+Then, if you choose to use Nix, run:
 ```
 $ nix-shell
 ```
