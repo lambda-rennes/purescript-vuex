@@ -7,7 +7,7 @@
   },
   "scripts": {
     "buildjs": "parcel build web/index.js",
-    "buildps": "parcel build web/index.js",
+    "buildps": "pulp --psc-package build",
     "watch": "pulp --psc-package -w build",
     "serve": "parcel serve web/index.html"
   },
