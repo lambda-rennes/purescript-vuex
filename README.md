@@ -19,15 +19,16 @@ To build this project, you will need:
 - purescript 0.12
 - yarn
 
-The simplest way to provision these dependencies is to install Nix and start a Nix shell:
+The simplest way to provision these dependencies is to install Nix (`curl
+https://nixos.org/nix/install | sh`) and start a Nix shell:
 
 ```
-$ nix-shell --pure
+$ nix-shell
 ```
 
-This will drop you in a shell where all necessary tools are available, pinned to
-a working version. It may take a while the first time, but everything will be
-cached afterwards.
+This will drop you into a shell where all necessary tools are available, pinned
+to a working revision. It may take a while the first time, but everything will
+be cached afterwards.
 
 ## Building the project
 
@@ -42,15 +43,16 @@ Then, build PureScript code with:
 $ yarn buildps
 ```
 
-You may also use `yarn watch` to continuously monitor for changes and rebuild
-automatically.
+Alternatively, you may use `yarn watch` to continuously monitor for changes and
+automatically recompile PureScript into JavaScript code.
 
-Finally, you may start a web server with Parcel that will automatically bundle
-PureScript and JavaScript code:
+Finally, start a web server with Parcel. It will automatically bundle all
+JavaScript code, including standalone `.vue` components, into a single
+JavaScript file and serve the `web/index.html` file:
 
 ```
-$ yarn server
-arn run v1.5.1
+$ yarn serve
+yarn run v1.5.1
 warning package.json: No license field
 $ parcel serve web/index.html
 Server running at http://localhost:1234 
@@ -59,3 +61,19 @@ Server running at http://localhost:1234
 
 Point your web browser to `http://localhost:1234`: you should see a working web
 application !
+
+Parcel will also monitor for changes, rebuilding the JavaScript bundle as
+needed. Using `yarn watch` and `yarn serve` together is thus especially
+convenient.
+
+# Troubleshooting
+
+In case of issues, try running a _pure_ `nix-shell`:
+
+```
+$ nix-shell --pure
+```
+
+This should improve reproducibility, as only the environment provisioned by the
+`nix-shell` should be visible (i.e., it will not interfere with pre-installed
+programs). Note that most applications won't be accessible anymore !
